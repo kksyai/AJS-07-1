@@ -1,7 +1,7 @@
 export default class Validator {
   constructor(name){
    function validateUserName(charName){
-    if(charName.match(/\d{4,}/g) || charName.match(/^[_\d-]/g) || charName.match(/[_\d-]$/)){
+    if(charName.match(/([^-\w])|(\d{4,})|(^[_\d-])|([_\d-]$)/g)){
         throw new Error('Name not allowed');
       }
     return charName;
